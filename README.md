@@ -1,4 +1,4 @@
-# DiffuAgent: The Bitter Lesson of Diffusion Language Models for Agentic Workflows
+# DiffuAgent: The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check.
 
 ## News
 
