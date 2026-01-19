@@ -1,4 +1,6 @@
-# DiffuAgent
+# DiffuAgent: The Bitter Lesson of Diffusion Language Models for Agentic Workflows
 
-[2026-01] Codes will soon released.
-[DiffuAgent] The Bitter Lesson of Diffusion Language Models for Agentic Workflows
+## News
+
+- **[Jan 2026]** DiffuAgent has been submitted to **ACL 2026**.
+- **[Coming Soon]** Code release.
