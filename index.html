@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DiffuAgent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ================= Title ================= -->
+  <div class="title-wrapper">
+    <img src="static/img/diffuagent_icon.png"
+        alt="DiffuAgent Icon"
+        class="title-icon">
+    <h1 class="title">DiffuAgent</h1>
+  </div>
+  <h2 class="subtitle">
+    The Bitter Lesson of Diffusion Language Models for Agentic Workflows:<br>
+    A Comprehensive Reality Check
+  </h2>
+
+  <p class="authors">
+    Qingyu&nbsp;Lu<sup>1,3</sup>,
+    Liang&nbsp;Ding<sup>2</sup>,
+    Kanjian&nbsp;Zhang<sup>2</sup>,
+    Jinxia&nbsp;Zhang<sup>1</sup>,
+    Dacheng&nbsp;Tao<sup>3</sup>
+    </p>
+
+  <p class="affiliations">
+    <sup>1</sup>Southeast University, China
+    <sup>2</sup>Alibaba
+    <sup>3</sup>Nanyang Technological University, Singapore
+  </p>
+
+  <div class="buttons">
+    <a class="button" href="#" target="_blank">
+      <i class="fa-regular fa-file-lines"></i> Paper
+    </a>
+    <a class="button" href="https://github.com/Coldmist-Lu/DiffuAgent" target="_blank">
+      <i class="fa-brands fa-github"></i> Code
+    </a>
+  </div>
+
+  <!-- ================= Failure Cases ================= -->
+  <div class="section">
+    <img src="static/img/dllm_failure_mode.png" class="figure">
+
+    <ul class="figure-caption">
+      <li>
+        <strong><em>In Embodied settings</em></strong>, dLLMs suffer repeated attempts
+        (<b>retry loops</b>), failing to branch under temporal feedback.
+      </li>
+      <li>
+        <strong><em>In Tool-Calling settings</em></strong>, dLLMs fail to maintain
+        <b>symbolic precision</b> (e.g., strict JSON schemas) under diffusion noise.
+      </li>
+    </ul>
+  </div>
+
+  <!-- ================= TL;DR ================= -->
+  <div class="section">
+    <h3>TL; DR</h3>
+    <ul>
+        <li>
+        <b>Efficiency ≠ Agentic Effectiveness.</b>
+        Despite low latency, diffusion-based LLMs (dLLMs) fail to serve as reliable agent backbones in both long-horizon <b><em>embodied</em></b> tasks and precision-critical <b><em>tool-calling</em></b> scenarios.
+        </li>
+        <li>
+        <b>Systematic Agentic Failures.</b>
+        dLLMs exhibit characteristic failure modes, including retry loops under temporal feedback and loss of symbolic precision (e.g., malformed JSON) under diffusion noise.
+        </li>
+        <li>
+        <b>DiffuAgent Framework.</b>
+        We introduce <b>DiffuAgent</b>, a unified and modular framework for evaluating dLLMs across embodied and tool-calling agentic workflows.
+        </li>
+        <li>
+        <b>Where dLLMs Work.</b>
+        dLLMs remain effective in non-causal auxiliary roles (e.g., memory summarization and tool selection), but require causal and logically grounded mechanisms to function as full agent backbones.
+        </li>
+    </ul>
+    </div>
+
+  <!-- ================= Failure (Tables) ================= -->
+  <div class="section">
+    <h3>Failure of dLLMs as Agent Backbones</h3>
+
+    <img
+      src="static/img/failure_tables.png"
+      class="figure"
+      alt="Failure tables (embodied + tool-calling)"
+      style="width: 80%; display: block; margin: 0 auto 0.5em;"
+    >
+
+    <p>
+      We compare dLLMs and autoregressive LLMs on embodied (AgentBoard) and tool-calling (BFCL) benchmarks.
+      The results show that dLLMs lag behind on both success/progress and tool-calling accuracy.
+    </p>
+  </div>
+
+  <!-- ================= Failure Analysis Figures ================= -->
+  <div class="section">
+    <h3>Systematic Failure Modes of dLLMs</h3>
+
+    <img
+      src="static/img/failure_figs.png"
+      class="figure"
+      alt="Failure analysis of dLLMs: retry loops, imprecise tool-calls, and efficiency-performance mismatch"
+    >
+
+    <p>
+      (a) <strong>Failure of Replan for embodied agents</strong>: dLLMs exhibit significantly more frequent retry loops than LLMs.<br>
+      (b) <strong>Failure of Precision for tool-calling agents</strong>: dLLMs are more prone to produce malformed JSON schemas.<br>
+      (c) <strong>Performance-Efficiency Trade-offs</strong>: despite higher inference efficiency, dLLMs do not guarantee comparable agentic performance to autoregressive LLMs.
+    </p>
+
+  </div>
+
+  <!-- ================= Framework ================= -->
+  <div class="section">
+    <h3>DiffuAgent: Framework on Analyzing Agentic Behaviors in dLLMs</h3>
+    <img src="static/img/diffuagent.png" class="figure diffuagent-fig" alt="Framework">
+    <p>
+      To better understand the agentic potential of dLLMs, we introduce DiffuAgent, a novel evaluation framework that treats dLLMs as plug-and-play cognitive modules for augmenting LLM agents.
+    </p>
+    <ul class="diffuagent-list">
+      <li>
+        For <b>embodied agents</b>, we introduce a memory-augmented module for history compression and an early-exit verifier for global trajectory checking.
+      </li>
+      <li>
+        For <b>tool-calling agents</b>, we include a tool selector over the library of available tools, and a JSON format editor.
+      </li>
+    </ul>
+    
+  </div>
+
+  <!-- ================= Analysis ================= -->
+  <div class="section">
+    <h3>Analysis of Agentic Behaviors in dLLMs</h3>
+    <img src="static/img/analysis_memory.png" class="figure" style="width: 70%; display: block; margin: 0 auto;">
+    <p>• <b>dLLMs are competitive memory modules</b> for memory-augmented agents.</p>
+
+    <img src="static/img/analysis_earlyexit.png" class="figure" style="width: 40%; display: block; margin: 0 auto;">
+    <p>• LLM Verifiers tend to trigger premature early exits, whereas <b>dLLMs terminate more reliably</b>.</p>
+    
+    <img src="static/img/analysis_tool.png" class="figure" style="width: 80%; display: block; margin: 0 auto;">
+    <p>• dLLMs are <b>effective tool selectors</b> but <b>struggle as tool-call editors</b>.</p>
+
+  </div>
+
+  <!-- ================= Citation ================= -->
+  <div class="section">
+    <h3>Citation</h3>
+    <pre class="bibtex">
+@article{lu2026diffuagent,
+  title   = {The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check},
+  author  = {Lu, Qingyu and Ding, Liang and Liu, Xuebo and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
+  journal = {arXiv preprint},
+  year    = {2026}
+}
+    </pre>
+  </div>
+
+  <div class="footer">
+    © 2026 DiffuAgent
+  </div>
+
+</div>
+
+</body>
+</html>
