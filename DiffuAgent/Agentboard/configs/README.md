@@ -256,31 +256,6 @@ python eval_modular.py --cfg-path scripts/old_config.yaml --model qwen3
 python eval_modular.py --cfg-path scripts/old_config.yaml --model qwen3 --legacy
 ```
 
-## Troubleshooting
-
-### Error: Model 'xxx' not found
-
-Check that the model name in your experiment config matches the key in `base/llms.yaml` exactly.
-
-### Error: Agent preset 'xxx' not found
-
-Check that the agent preset name exists in `base/agents.yaml`.
-
-### Config not loading correctly
-
-Use the `--legacy` flag if you're using an old-style config file.
-
-### Need to debug merged config
-
-The `config_merger.py` module can save the merged config for inspection:
-
-```python
-from configs.config_merger import load_merged_config, save_full_config
-
-config = load_merged_config("configs/experiments/my_exp.yaml")
-save_full_config(config, "debug_full_config.yaml")
-```
-
 ## Best Practices
 
 1. **Keep experiment configs minimal**: Only specify what differs from defaults
