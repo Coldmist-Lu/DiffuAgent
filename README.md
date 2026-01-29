@@ -19,48 +19,6 @@
 
 ---
 
-## Quick Start
-
-For detailed installation and setup instructions, see **[`DiffuAgent/Agentboard/installation.md`](DiffuAgent/Agentboard/installation.md)**.
-
-### Setup
-
-```bash
-git clone git@github.com:Coldmist-Lu/DiffuAgent.git
-cd DiffuAgent
-# Follow installation.md for complete setup guide
-```
-
-**Key steps**:
-1. Clone this repository
-2. Sparse checkout AgentBoard (agentboard folder only)
-3. Download required data
-4. Merge with DiffuAgent enhanced code
-5. Fix configuration paths (if using AlfWorld)
-
-### Run Experiments
-
-After setup, run experiments:
-
-```bash
-export PROJECT_PATH=/path/to/DiffuAgent
-cd ${PROJECT_PATH}/DiffuAgent/Agentboard
-python eval_modular.py --cfg-path ${PROJECT_PATH}/DiffuAgent/Agentboard/configs/experiments/onepass.yaml --model qwen3 --tasks alfworld_enhanced
-```
-
-### Run BFCL Evaluations
-
-```bash
-cd ${PROJECT_PATH}/DiffuAgent/BFCL
-python openfunctions_evaluation.py --model diffuagent-chatbase/qwen3-8b
-```
-
-> **Note:** Our BFCL experiments have been extended to v4. To reproduce v3 experiments, please use the v3 codebase.
-
-> **Note:** We used Claude Code for automatic code optimization, which passed preliminary testing. If you encounter any issues during use, please contact us.
-
----
-
 ## Failure Cases of dLLMs in Agentic Workflows
 
 <p align="center">
@@ -122,6 +80,41 @@ To better understand the agentic potential of dLLMs, we introduce DiffuAgent, a 
 - **For embodied agents**, we introduce a memory-augmented module for history compression and an early-exit verifier for global trajectory checking.
 
 - **For tool-calling agents**, we include a tool selector over the library of available tools, and a JSON format editor.
+
+### Quick Start
+
+For detailed installation and setup instructions, see **[`DiffuAgent/Agentboard/installation.md`](DiffuAgent/Agentboard/installation.md)**.
+
+**Setup**:
+```bash
+git clone git@github.com:Coldmist-Lu/DiffuAgent.git
+cd DiffuAgent
+# Follow installation.md for complete setup guide
+```
+
+**Key steps**:
+1. Clone this repository
+2. Sparse checkout AgentBoard (agentboard folder only)
+3. Download required data
+4. Merge with DiffuAgent enhanced code
+5. Fix configuration paths (if using AlfWorld)
+
+**Run Experiments**:
+```bash
+export PROJECT_PATH=/path/to/DiffuAgent
+cd ${PROJECT_PATH}/DiffuAgent/Agentboard
+python eval_modular.py --cfg-path ${PROJECT_PATH}/DiffuAgent/Agentboard/configs/experiments/onepass.yaml --model qwen3 --tasks alfworld_enhanced
+```
+
+**Run BFCL Evaluations**:
+```bash
+cd ${PROJECT_PATH}/DiffuAgent/BFCL
+python openfunctions_evaluation.py --model diffuagent-chatbase/qwen3-8b
+```
+
+> **Note:** Our BFCL experiments have been extended to v4. To reproduce v3 experiments, please use the v3 codebase.
+
+> **Note:** We used Claude Code for automatic code optimization, which passed preliminary testing. If you encounter any issues during use, please contact us.
 
 ---
 
