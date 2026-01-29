@@ -11,8 +11,8 @@ This guide provides step-by-step instructions for setting up BFCL in the unified
 ## Step 1: Clone this repository
 
 ```bash
-git clone git@github.com:Coldmist-Lu/DiffuAgent_TMP.git
-cd DiffuAgent_TMP
+git clone git@github.com:Coldmist-Lu/DiffuAgent.git
+cd DiffuAgent
 ```
 
 ## Step 2: Create unified_envs working directory
@@ -157,27 +157,6 @@ EOF
   - diffuagent-diff-chatbase/llada
 ```
 
-### Troubleshooting
-
-#### Error: `ValueError: Unknown model_name 'diffuagent-chatbase/qwen3-8b'`
-
-**Solution**: The registration step wasn't completed. Run:
-```bash
-python3 register_diffuagent.py
-```
-
-#### Error: `ModuleNotFoundError: No module named 'bfcl_eval.build_handlers_diffuagent'`
-
-**Solution**: The DiffuAgent code wasn't merged. Go back to Step 4.
-
-#### Error: Permission denied when writing model_config.py
-
-**Solution**: Make the file writable:
-```bash
-chmod +w bfcl_eval/constants/model_config.py
-python3 register_diffuagent.py
-```
-
 ### Manual Registration (Alternative)
 
 If the script doesn't work, you can manually register:
@@ -279,41 +258,6 @@ Evaluation results are saved in:
     ├── {model_name}_evaluation.json   # Evaluation scores
     └── logs/
         └── {model_name}_eval.log      # Detailed logs
-```
-
-## Troubleshooting
-
-### ModuleNotFoundError: No module named 'bfcl_eval'
-
-This indicates the Python path is not set correctly. Make sure you're in the correct directory:
-
-```bash
-cd /path/to/unified_envs/gorilla/berkeley-function-call-leaderboard
-```
-
-### API Key not found
-
-Make sure your API key is properly set as environment variable:
-
-```bash
-export OPENAI_API_KEY=your_key_here
-export ANTHROPIC_API_KEY=your_key_here
-```
-
-### Git sparse checkout not working
-
-Make sure you have Git version 2.25+ for sparse checkout support:
-
-```bash
-git --version  # Should be 2.25 or higher
-```
-
-If sparse checkout is not available, use the traditional method:
-
-```bash
-# Full clone (not recommended, downloads entire repository)
-git clone https://github.com/ShishirPatil/gorilla.git
-cd gorilla/berkeley-function-call-leaderboard
 ```
 
 ## Integration with DiffuAgent

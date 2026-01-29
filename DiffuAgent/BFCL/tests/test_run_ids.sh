@@ -6,7 +6,7 @@
 source /usr/local/miniconda3/bin/activate bfcl2
 
 # Configuration - modify these paths according to your environment
-export BFCL_PROJECT_ROOT="${BFCL_PROJECT_ROOT:-/workspace/DiffuAgent_TMP/unified_envs/gorilla/berkeley-function-call-leaderboard}"
+export BFCL_PROJECT_ROOT="${BFCL_PROJECT_ROOT:-/path/to/DiffuAgent/unified_envs/gorilla/berkeley-function-call-leaderboard}"
 export CUDA_VISIBLE_DEVICES="0"
 
 export DEBUG_DIFFUAGENT=0
