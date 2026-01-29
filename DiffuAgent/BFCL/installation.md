@@ -129,62 +129,6 @@ The registration script modifies `bfcl_eval/constants/model_config.py` to:
    }
    ```
 
-### Verification
-
-After registration, verify it worked:
-
-```bash
-python3 << 'EOF'
-from bfcl_eval.constants.model_config import MODEL_CONFIG_MAPPING
-
-# Check DiffuAgent models are registered
-diffuagent_models = [k for k in MODEL_CONFIG_MAPPING.keys() if 'diffuagent' in k.lower()]
-print(f"✓ Found {len(diffuagent_models)} DiffuAgent models")
-
-# List some models
-for model in sorted(diffuagent_models)[:5]:
-    print(f"  - {model}")
-EOF
-```
-
-**Should output**:
-```
-✓ Found 52 DiffuAgent models
-  - diffuagent-chatbase/ministral-8b
-  - diffuagent-chatbase/qwen3-8b
-  - diffuagent-diff-chatbase/dream
-  - diffuagent-diff-chatbase/fdllmv2
-  - diffuagent-diff-chatbase/llada
-```
-
-### Manual Registration (Alternative)
-
-If the script doesn't work, you can manually register:
-
-1. Edit `bfcl_eval/constants/model_config.py`:
-   ```bash
-   vim bfcl_eval/constants/model_config.py
-   ```
-
-2. Add this **before** the `MODEL_CONFIG_MAPPING = {` line:
-   ```python
-   # DiffuAgent model configurations
-   from bfcl_eval.build_handlers_diffuagent import add_diffuagent_model_configs
-   diffuagent_model_map = add_diffuagent_model_configs()
-   ```
-
-3. Add `**diffuagent_model_map,` as the **first** item in MODEL_CONFIG_MAPPING:
-   ```python
-   MODEL_CONFIG_MAPPING = {
-       **diffuagent_model_map,  # ← Add this line
-       **api_inference_model_map,
-       **local_inference_model_map,
-       **third_party_inference_model_map,
-   }
-   ```
-
-4. Save and verify with the verification command above.
-
 ## Running BFCL Evaluations
 
 After setup, use the provided test script to run DiffuAgent evaluations:
