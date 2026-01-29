@@ -1,0 +1,13 @@
+"""
+Debug patch for base.py
+Add this code after line 243 in base.py
+"""
+
+        # DEBUG: Log input information
+        if debug.enabled:
+            debug.section(f"QUERY PROMPTING - Backend: {self.backend.upper()}")
+            debug.info(f"Features: Selector={self.selector is not None}, Editor={self.editor is not None}")
+            debug.data("Number of functions", len(function))
+            debug.data("Number of messages", len(message))
+            debug.json_data("Last message", message[-1], truncate=100)
+
