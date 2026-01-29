@@ -58,7 +58,7 @@ Now you have the base AgentBoard code in `unified_envs/AgentBoard/agentboard/`. 
 
 ```bash
 # Set PROJECT_PATH
-export PROJECT_PATH=$(pwd)/AgentBoard
+export PROJECT_PATH=/path/to/DiffuAgent/unified_envs/AgentBoard
 
 # Simple one-command merge: copy all enhanced code over base code
 # Note: current directory should be unified_envs/AgentBoard/
