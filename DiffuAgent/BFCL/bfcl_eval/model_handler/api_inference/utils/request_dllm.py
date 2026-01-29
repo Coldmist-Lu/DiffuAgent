@@ -48,7 +48,7 @@ DLLM_TEMPLATE = {
 # Set via environment variables: DLLM_API_KEY, DLLM_BASE_URL or FEATURES_API_KEY, FEATURES_BASE_URL
 API_KEY_DICT = {
     "api_key": os.getenv("DLLM_API_KEY") or os.getenv("FEATURES_API_KEY") or "",
-    "base_url": os.getenv("DLLM_BASE_URL") or os.getenv("FEATURES_BASE_URL") or "http://localhost:23450",
+    "base_url": os.getenv("DLLM_BASE_URL") or os.getenv("FEATURES_BASE_URL") or "",
 }
 
 class REQUEST_DLLM:
