@@ -139,7 +139,30 @@
         For <b>tool-calling agents</b>, we include a tool selector over the library of available tools, and a JSON format editor.
       </li>
     </ul>
-    
+
+    <h4>Quick Start</h4>
+    <p>
+      For detailed installation and setup instructions, see the <a href="https://github.com/Coldmist-Lu/DiffuAgent" target="_blank">GitHub repository</a>.
+    </p>
+    <pre class="bibtex" style="background: #f5f5f5; padding: 1em; border-radius: 4px; overflow-x: auto;">
+# Setup
+git clone git@github.com:Coldmist-Lu/DiffuAgent.git
+cd DiffuAgent
+
+# Run Experiments
+export PROJECT_PATH=/path/to/DiffuAgent
+cd ${PROJECT_PATH}/DiffuAgent/Agentboard
+python eval_modular.py --cfg-path ${PROJECT_PATH}/DiffuAgent/Agentboard/configs/experiments/onepass.yaml --model qwen3 --tasks alfworld_enhanced
+
+# Run BFCL Evaluations
+cd ${PROJECT_PATH}/DiffuAgent/BFCL
+python openfunctions_evaluation.py --model diffuagent-chatbase/qwen3-8b
+    </pre>
+    <p style="font-size: 0.9em; color: #666; margin-top: 0.5em;">
+      <i>Note: Our BFCL experiments have been extended to v4. To reproduce v3 experiments, please use the v3 codebase.</i><br>
+      <i>Note: We used Claude Code for automatic code optimization, which passed preliminary testing. If you encounter any issues during use, please contact us.</i>
+    </p>
+
   </div>
 
   <!-- ================= Analysis ================= -->
@@ -162,7 +185,7 @@
     <pre class="bibtex">
 @article{lu2026diffuagent,
   title   = {The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check},
-  author  = {Lu, Qingyu and Ding, Liang and Liu, Xuebo and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
+  author  = {Lu, Qingyu and Ding, Liang and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
   journal = {arXiv preprint},
   year    = {2026},
   url     = {https://arxiv.org/pdf/2601.12979}
