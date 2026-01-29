@@ -1,0 +1,18 @@
+{"examples": {
+    "task": "Here is the example:\nTask Description: Your task is to boil water. For compounds without a boiling point, combusting the substance is also acceptable. First, focus on the substance. Then, take actions that will cause it to change its state of matter.",
+	"1": {
+		"memory": "(empty)",
+		"assistant": "Thought: I need to explore the environment to locate water or another suitable substance.\nAction: look around",
+		"observation": "This room is called the hallway. In it, you see: a picture, a substance called air, and the agent. You also see doors to several rooms: the green house, living room, art studio, kitchen, bedroom, and workshop—all of which are open."
+	},	
+	"2": {
+		"memory": "The agent has explored the hallway, found multiple open doors, and entered the kitchen to search for resources. Inside the kitchen, the agent has identified a thermometer, sink, stove, lighter, fridge, cupboard, and various containers. It has already picked up a thermometer and a metal pot and placed the pot into the sink to fill it with water.",
+		"assistant": "Thought: The pot should now be full; I’ll turn off the sink to stop the water flow.\nAction: deactivate sink",
+		"observation": "The sink is now deactivated."
+	},
+	"3": {
+		"memory": "The agent has explored the hallway and kitchen, collected a thermometer and metal pot, filled the pot with water using the sink, moved it to the stove, and heated it while monitoring temperature changes (13°C → 20°C → 78°C → 98°C). Steam has formed, indicating boiling. The agent has confirmed the steam temperature (107°C) and verified the phase transition is complete.",
+		"assistant": "Thought: The water has boiled and transitioned into steam — the task is complete.\nAction: wait1",
+		"observation": "You decide to wait for 1 iterations, confirming full phase transition."
+	}
+}, "instruction": "You are an agent in a virtual science school environment, tasked to interact with various elements.\nHere are the commands you can use:\n\n- **Manipulation**: \n  - `open {OBJ}` / `close {OBJ}`: Interact with a container.\n  - `pick up {OBJ}`: Add an object to your inventory.\n  - `put down {OBJ}`: Remove an object from your inventory.\n  - `move {OBJ} to {OBJ}`: Transfer an object.\n  - `pour {OBJ} into {OBJ}`: Pour a substance.\n  - `dunk {OBJ} into {OBJ}`: Immerse a container in a liquid.\n  - `mix {OBJ}`: Chemically combine contents.\n\n- **Inspection**:\n  - `look around`: Survey your surroundings.\n  - `look at {OBJ}`: Examine an object closely.\n  - `look in {OBJ}`: Peek inside a container.\n  - `read {OBJ}`: Review written content.\n\n- **Device Operations**:\n  - `activate {OBJ}` / `deactivate {OBJ}`: Toggle a device.\n  - `use {OBJ} [on {OBJ}]`: Utilize a device or item.\n\n- **Movement**:\n  - `go to {LOC}`: Relocate.\n\n- **Miscellaneous**:\n  - `eat {OBJ}`: Consume an edible item.\n  - `flush {OBJ}`: Activate a flushing mechanism.\n  - `focus on {OBJ}`: Direct attention to a particular object.\n  - `wait [DURATION]`: Pause for a specified period.\n\n- **Information**:\n  - `task`: Recap your current objective.\n  - `inventory`: Display items you're carrying.\n\nWhere:\n- `{OBJ}`: Object\n- `{LOC}`: Location\n- `[DURATION]`: Specified time\n", "system_msg": "You are a helpful agent that interacts with the virtual science school environment to solve the given task. "}

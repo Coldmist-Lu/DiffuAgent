@@ -1,0 +1,12 @@
+# Memory Agent Configuration
+# ReAct agent with dynamic memory
+# Works with all LLM and DLLM models
+
+llm: [qwen3, ministral, llada, dream, fdllm, dvar]
+agent: memory
+env: [alfworld_enhanced, scienceworld_enhanced, babyai_enhanced]
+
+run:
+  max_num_steps: 30
+  wandb: false
+  log_path: ${PROJECT_PATH}/outputs/memory

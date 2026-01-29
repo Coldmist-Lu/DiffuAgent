@@ -1,0 +1,21 @@
+{  
+    "examples": [
+        "Here is the example:\nYour task is: You are the warrior Link that needs to save the princess from the castle. You are at the path leading to the castle. The castle is to your north. There is a barrel in front of you.",
+        "Thought: Before entering the castle, I should check the barrel—there might be useful equipment.\nAction: Examine barrel",
+        "Observation: There is a gleaming elvish sword.",
+        "Thought: This sword could help me in my quest to save the princess. I should take it.\nAction: take the sword",
+        "Observation: The sword is taken",
+        "Thought: I’m ready. The castle lies to the north—time to head in.\nAction: north",
+        "Observation: Main hall \n The castle is dimly lit, with lava flowing in many places. There is a staircase leading up to princess bedroom, a door to your north leading to the kitchen hall, and the door you just entered on your south",
+        "Thought: There are multiple paths. Let me check what options are available.\nAction: check valid actions",
+        "Observation: south, north, up, look, examine staircase",
+        "Thought: The princess is likely upstairs. I'll take the staircase.\nAction: up",
+        "Observation: Princess’s bedroom. Princess is sleeping in bed.",
+        "Thought: I've found her! I need to check what I can do here.\nAction: check valid actions",
+        "Observation: wake up the princess,  take out sword, down",
+        "Thought: The quest is to save her—I'll wake her up from the coma.\nAction: wake up the princess",
+        "Observation: The princess wake up from the coma. Thank you my knight, she says. The task is finished."
+    ],
+    "instruction": "You are in a fictional game environment and you need to accomplish goals by performing actions. Each action is a simple phrase. Here are the actions you can do: \nInventory: check things you are carrying\nLook: check your surroundings\nExamine <place/obj>: check the details of something\nTake <obj>: pickup obj\n Put down <obj>: leave a obj at your current place.\n Drop <obj>\nCheck valid actions: Check actions you can use\nSouth: go south\nNorth: go north\nEast: go east\nWest: go west\nUp: go up\nDown: go down\nOther available actions could be determined through check valid actions.\n",
+    "system_msg": "You are a game master in fictional text games."
+}

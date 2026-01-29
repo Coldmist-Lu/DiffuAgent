@@ -1,0 +1,114 @@
+{
+  "examples": {
+    "put": {
+      "task": "Here is the example:\nYour task is to: put some spraybottle on toilet.\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a countertop 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a sinkbasin 2, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: I should check nearby storage spaces for a spraybottle.\nAction: go to cabinet 1",
+        "observation": "On the cabinet 1, you see a cloth 1, a soapbar 1, a soapbottle 1."
+      },
+      "2": {
+        "memory": "The agent has checked cabinet 1 and found no spraybottle, then moved to cabinet 2 and discovered it was closed. Cabinet 2 is still unopened and uninspected inside.",
+        "assistant": "Thought: I need to open this cabinet to see what's inside.\nAction: open cabinet 2",
+        "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a candle 1, and a spraybottle 2."
+      },
+      "3": {
+        "memory": "The agent has searched cabinet 1 (without finding a spraybottle), opened cabinet 2 (where the spraybottle was found), picked up spraybottle 2, and moved to the toilet 1 (where a soapbottle was present).",
+        "assistant": "Thought: It's time to place the spraybottle on the toilet to complete the task.\nAction: put spraybottle 2 in/on toilet 1",
+        "observation": "You put the spraybottle 2 in/on the toilet 1."
+      }
+    },
+    "clean": {
+      "task": "Here is the example:\nYour task is to: clean some soapbar and put it in toilet.\nYou are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a garbagecan 1, a handtowelholder 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: The soapbar might already be on or near the toilet.\nAction: go to toilet 1",
+        "observation": "On the toilet 1, you see a soapbar 4, and a soapbar 3."
+      },
+      "2": {
+        "memory": "The agent has examined the toilet and discovered two soapbars there. It picked up one soapbar (soapbar 4) from the toilet and carried it to the sinkbasin 1 to prepare for cleaning.",
+        "assistant": "Thought: Now I can clean the soapbar using the sink.\nAction: clean soapbar 4 with sinkbasin 1",
+        "observation": "You clean the soapbar 4 using the sinkbasin 1."
+      },
+      "3": {
+        "memory": "The agent explored the room, found two soapbars on the toilet, took soapbar 4, brought it to the sinkbasin 1, cleaned it using the sink, and returned to the toilet where soapbar 3 remained.",
+        "assistant": "Thought: Time to place the cleaned soapbar on the toilet to complete the task.\nAction: put soapbar 4 in/on toilet 1",
+        "observation": "You put the soapbar 4 in/on the toilet 1."
+      }
+    },
+    "heat": {
+      "task": "Here is the example:\nYour task is to: put a hot apple in fridge.\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: The apple might be on the dining table, I should check there first.\nAction: go to diningtable 1",
+        "observation": "On the diningtable 1, you see a apple 1, a bread 1, a fork 3, a fork 2, a fork 1, a mug 2, a peppershaker 3, a plate 2, a pot 1, a soapbottle 3, a spatula 1, a spoon 3, a spoon 2, a spoon 1, a winebottle 3, and a winebottle 2."
+      },
+      "2": {
+        "memory": "The agent has inspected the dining table, found an apple among other items, and picked it up to heat it. Then the agent moved to the microwave, which was found closed, ready for use.",
+        "assistant": "Thought: Now I can heat the apple using the microwave.\nAction: heat apple 1 with microwave 1",
+        "observation": "You heat the apple 1 using the microwave 1."
+      },
+      "3": {
+        "memory": "The agent has located and picked up an apple from the dining table, heated it in the microwave until it became hot, and moved to the fridge, which was open and contained a cup and an egg. The apple is hot and ready to be stored.",
+        "assistant": "Thought: Time to place the hot apple in the fridge to finish the task.\nAction: put apple 1 in/on fridge 1",
+        "observation": "You put the apple 1 in/on the fridge 1."
+      }
+    },
+    "cool": {
+      "task": "Here is the example:\nYour task is to: cool some pan and put it in stoveburner.\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 1, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a safe 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: I should start by checking the stoveburners for a pan.\nAction: go to stoveburner 1",
+        "observation": "On the stoveburner 1, you see nothing."
+      },
+      "2": {
+        "memory": "The agent has checked stoveburner 1 and found nothing, then inspected stoveburner 2 and saw a pot. Afterward, it went to stoveburner 3 and discovered a pan 1, which it picked up and brought to the fridge to cool.",
+        "assistant": "Thought: I can use the fridge to cool down the pan.\nAction: cool pan 1 with fridge 1",
+        "observation": "You cool the pan 1 using the fridge 1."
+      },
+      "3": {
+        "memory": "The agent searched stoveburners 1–3, found a pan on stoveburner 3, picked it up, brought it to the fridge to cool it, successfully cooled it, then moved to an empty stoveburner 1 to place it there.",
+        "assistant": "Thought: This burner is free, time to place the cooled pan here.\nAction: put pan 1 in/on stoveburner 1",
+        "observation": "You put the pan 1 in/on the stoveburner 1."
+      }
+    },
+    "puttwo": {
+      "task": "Here is the example:\nYour task is to: put two cellphone in sofa.\nYou are in the middle of a room. Looking quickly around you, you see a coffeetable 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a sidetable 2, a sidetable 1, and a sofa 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: I should start by checking common surfaces like the coffeetable for a cellphone.\nAction: go to coffeetable 1",
+        "observation": "On the coffeetable 1, you see a box 1, a cellphone 3, and a plate 1."
+      },
+      "2": {
+        "memory": "The agent has explored the coffeetable and found one cellphone (cellphone 3), which was picked up and placed on the sofa 1. The agent still needs one more cellphone and is planning to continue searching. The diningtable is identified as a likely next spot.",
+        "assistant": "Thought: I’ll check the diningtable next to find another cellphone.\nAction: go to diningtable 1",
+        "observation": "On the diningtable 1, you see a cellphone 2, a keychain 2, a laptop 1, a statue 2, and a statue 1."
+      },
+      "3": {
+        "memory": "The agent has searched the coffeetable (found cellphone 3) and placed it on the sofa. Then, the agent explored the diningtable (found cellphone 2), picked it up, and moved to the sofa to place it there. One cellphone was already on the sofa before placing the second one.",
+        "assistant": "Thought: Time to place the second cellphone and complete the task.\nAction: put cellphone 2 in/on sofa 1",
+        "observation": "You put the cellphone 2 in/on the sofa 1."
+      }
+    },
+    "examine": {
+      "task": "Here is the example:\nYour task is to: look at statue under the desklamp.\nYou are in the middle of a room. Looking quickly around you, you see a coffeetable 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a sidetable 2, a sidetable 1, and a sofa 1.",
+      "1": {
+        "memory": "(empty)",
+        "assistant": "Thought: I should check the dresser to see if there's a statue I can use.\nAction: go to dresser 1",
+        "observation": "On the dresser 1, you see a cellphone 3, a newspaper 2, a statue 1, and a television 1."
+      },
+      "2": {
+        "memory": "The agent has gone to the dresser and found several objects including a statue. The statue was picked up successfully. The agent is now searching for a desklamp to look at it under. The first sidetable checked had no desklamp.",
+        "assistant": "Thought: The first sidetable didn’t have a desklamp. I’ll check the other one to see if it does.\nAction: go to sidetable 2",
+        "observation": "On the sidetable 2, you see a desklamp 3, a newspaper 1, and a statue 2."
+      },
+      "3": {
+        "memory": "The agent has found and picked up a statue from the dresser, checked the first sidetable (no desklamp), then moved to the second sidetable where a desklamp was found. The statue is in hand, and the desklamp is ready to be used.",
+        "assistant": "Thought: There’s a desklamp here. I’ll turn it on to examine the statue.\nAction: use desklamp 3",
+        "observation": "You turn on the desklamp 3."
+      }
+    }
+  },
+  "system_msg": "You are a helpful assistant.",
+  "instruction": "Your task is to interact with a virtual household simulator to accomplish a specific task. With each interaction, you will receive an observation.\nYour role is to decide on an action based on the observation. Please ensure that any objects ('{obj}') and receptacles ('{recep}') you mention in your response are present in the observation provided.\n\nHere are the available actions you can take:\n- 'take {obj} from {recep}'\n- 'put {obj} in/on {recep}'\n- 'open {recep}'\n- 'close {recep}'\n- 'toggle {obj}/{recep}'\n- 'clean {obj} with {recep}'\n- 'cool {obj} with {recep}'\n- 'heat {obj} with {recep}'\n- 'go to {recep}'\n"
+}

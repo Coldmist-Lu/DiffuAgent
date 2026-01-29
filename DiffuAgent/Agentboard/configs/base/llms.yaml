@@ -1,0 +1,76 @@
+# LLM Models Configuration
+# This file defines all available LLM models that can be referenced in experiment configs
+#
+# Available models:
+#   qwen3      - Standard LLM (Qwen3-8B)
+#   ministral  - Standard LLM (Ministral-3-8B-Instruct)
+#   llada      - DiffusionLLM (Llada)
+#   dream      - DiffusionLLM (Dream)
+#   fdllm      - DiffusionLLM (FastDLLM-v2)
+#   dvar       - DiffusionLLM (DiffusionLLM-Var)
+
+# Standard API LLMs (OpenAI-compatible format)
+ministral:
+  name: api_llm
+  engine: /cloud/cloud-ssd1/models/mistralai/Ministral-3-8B-Instruct-2512
+  temperature: 0.1
+  max_tokens: 128
+  context_length: 16384
+  return_token: true
+
+qwen3:
+  name: api_llm
+  engine: /model/ModelScope/Qwen/Qwen3-8B
+  temperature: 0.1
+  max_tokens: 128
+  context_length: 32000
+  return_token: true
+
+# DiffusionLLM variants
+llada:
+  name: api_dllm
+  engine: Llada
+  temperature: 0.0
+  steps: 128
+  dual_cache: true
+  block_size: 32
+  threshold: 0.9
+  gen_length: 128
+  context_length: 4000
+  return_token: true
+
+dream:
+  name: api_dllm
+  engine: Dream
+  temperature: 0.0
+  steps: 128
+  dual_cache: true
+  block_size: 32
+  threshold: 0.9
+  gen_length: 128
+  context_length: 4000
+  return_token: true
+
+fdllm:
+  name: api_dllm
+  engine: Fdllmv2
+  temperature: 0.0
+  steps: 128
+  dual_cache: true
+  block_size: 32
+  threshold: 0.9
+  gen_length: 128
+  context_length: 4000
+  return_token: true
+
+dvar:
+  name: api_dllm
+  engine: dllmvar
+  temperature: 0.0
+  steps: 128
+  dual_cache: true
+  block_size: 32
+  threshold: 0.9
+  gen_length: 128
+  context_length: 16384
+  return_token: true

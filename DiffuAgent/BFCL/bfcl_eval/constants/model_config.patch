@@ -1,0 +1,17 @@
+--- a/bfcl_eval/constants/model_config.py
++++ b/bfcl_eval/constants/model_config.py
+@@ -2168,6 +2168,12 @@
+
+ # Uncomment to get the supported_models.py file contents
+ # print(repr(list(MODEL_CONFIG_MAPPING.keys())))
++
++# DiffuAgent model configurations
++from bfcl_eval.build_handlers_diffuagent import add_diffuagent_model_configs
++diffuagent_model_map = add_diffuagent_model_configs()
++
+ MODEL_CONFIG_MAPPING = {
+     **api_inference_model_map,
+     **local_inference_model_map,
+     **third_party_inference_model_map,
++    **diffuagent_model_map,
+ }

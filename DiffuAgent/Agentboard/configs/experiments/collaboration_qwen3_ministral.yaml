@@ -1,0 +1,21 @@
+# Agent Collaboration: LLM + LLM
+# Two different standard LLMs working together
+
+# IMPORTANT: Must include BOTH main LLM and auxiliary LLM in the list
+llm: [qwen3, ministral]
+
+agent:
+  preset: memory_exit  # Use strict for LLM auxiliary
+  overrides:
+    auxiliary_llm: ministral
+
+env: [alfworld_enhanced, scienceworld_enhanced, babyai_enhanced]
+
+run:
+  max_num_steps: 30
+  wandb: false
+  log_path: ${PROJECT_PATH}/outputs/collaboration_qwen3_ministral
+
+# Usage:
+#   Main agent (qwen3) generates actions
+#   Auxiliary agent (ministral) processes memory summaries and verification

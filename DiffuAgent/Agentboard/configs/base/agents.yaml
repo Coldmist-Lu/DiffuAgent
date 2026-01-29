@@ -1,0 +1,39 @@
+# Agent Presets Configuration
+# This file defines all available agent configurations
+
+# Basic ReAct agent without memory or early exit
+onepass:
+  name: ReactOnePass
+
+# ReAct agent with dynamic memory
+memory:
+  name: ReactMemory
+  stored_memory_max: 12
+  update_num: 8
+
+# ReAct agent with memory and early exit verification (strict)
+# Recommended for: Standard LLMs (qwen3, ministral)
+memory_exit:
+  name: ReactMemoryExit
+  stored_memory_max: 12
+  update_num: 8
+  verification_iter: 5
+  verification_format: strict
+
+# ReAct agent with memory and modest early exit
+# Recommended for: DiffusionLLMs (llada, dream, fdllm, dvar)
+memory_exit_modest:
+  name: ReactMemoryExit
+  stored_memory_max: 12
+  update_num: 8
+  verification_iter: 5
+  verification_format: modest
+
+# History replay agent with early exit (for offline testing)
+history_exit:
+  name: ReactHistoryExit
+  stored_memory_max: 12
+  update_num: 8
+  verification_iter: 5
+  verification_format: modest
+  history_file_path: null  # Set to path like: /path/to/history/logs

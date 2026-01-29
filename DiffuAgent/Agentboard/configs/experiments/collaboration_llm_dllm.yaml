@@ -1,0 +1,26 @@
+# Agent Collaboration: LLM + dLLM
+# Standard LLM as main agent, DiffusionLLM as auxiliary memory agent
+
+# IMPORTANT: Must include BOTH main LLM (qwen3/ministral) AND auxiliary LLM (llada/dream/...)
+# The config_merger only loads LLM configs that are explicitly listed here
+llm: [qwen3, llada]
+
+agent:
+  preset: memory_exit_modest  # Use modest for dLLM auxiliary
+  overrides:
+    auxiliary_llm: llada
+
+env: [alfworld_enhanced, scienceworld_enhanced, babyai_enhanced]
+
+run:
+  max_num_steps: 30
+  wandb: false
+  log_path: ${PROJECT_PATH}/outputs/collaboration_llm_dllm
+
+# Usage:
+#   Main agent (qwen3/ministral) generates actions
+#   Auxiliary agent (llada/dream/fdllm/dvar) processes memory summaries
+#
+# Verification format recommendations:
+#   - When using dLLM as auxiliary: use memory_exit_modest
+#   - When using LLM as auxiliary: use memory_exit (strict)

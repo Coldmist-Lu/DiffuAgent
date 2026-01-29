@@ -1,0 +1,12 @@
+# OnePass Agent Configuration
+# Basic ReAct agent without memory or early exit
+# Works with all LLM and DLLM models
+
+llm: [qwen3, ministral, llada, dream, fdllm, dvar]
+agent: onepass
+env: [alfworld_enhanced, scienceworld_enhanced, babyai_enhanced]
+
+run:
+  max_num_steps: 30
+  wandb: false
+  log_path: ${PROJECT_PATH}/outputs/onepass
