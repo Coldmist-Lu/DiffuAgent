@@ -224,21 +224,6 @@ Edit `test_case_ids_to_generate.json` to select which test cases to run:
 }
 ```
 
-## BFCL Test Categories
-
-BFCL includes the following test categories:
-
-- **Simple**: Simple function calls with single function
-- **Multiple**: Multiple function calls in one query
-- **Parallel**: Parallel function execution
-- **Multi-turn**: Multi-turn conversations with function calls
-- **AST**: Abstract Syntax Tree validation
-- **REST**: REST API calls
-- **Web Search**: Agentic web search capabilities
-- **Memory**: Agentic memory management
-
-See `TEST_CATEGORIES.md` in the berkeley-function-call-leaderboard directory for detailed descriptions of each category.
-
 ## Adding Custom Models
 
 To add a new model for evaluation:
