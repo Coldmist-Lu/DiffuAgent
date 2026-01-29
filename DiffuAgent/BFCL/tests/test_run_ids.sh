@@ -3,7 +3,8 @@
 # Test DiffuAgent with Test Case IDs
 ################################################################################
 
-source /usr/local/miniconda3/bin/activate bfcl2
+# Activate your conda environment (uncomment and modify as needed)
+# conda activate bfcl2
 
 # Configuration - modify these paths according to your environment
 export BFCL_PROJECT_ROOT="${BFCL_PROJECT_ROOT:-/path/to/DiffuAgent/unified_envs/gorilla/berkeley-function-call-leaderboard}"
@@ -15,14 +16,14 @@ export DEBUG_DIFFUAGENT=0
 MODEL_PATH="${MAIN_AGENT_MODEL_PATH:-/model/ModelScope/Qwen/Qwen3-8B}"
 MODEL_NAME="diffuagent-chatbase/qwen3-8b"
 
-# VLLM Server Configuration
-# Set API keys via environment variables or replace with your actual keys
+# API Server Configuration
+# Set API keys and URLs via environment variables
 export MAIN_AGENT_API_KEY="${MAIN_AGENT_API_KEY:-your-api-key-here}"
-export MAIN_AGENT_BASE_URL="${MAIN_AGENT_BASE_URL:-http://localhost:23456}"
+export MAIN_AGENT_BASE_URL="${MAIN_AGENT_BASE_URL:-your-base-url-here}"
 export MAIN_AGENT_MODEL_PATH="$MODEL_PATH"
 
 export FEATURES_API_KEY="${FEATURES_API_KEY:-your-api-key-here}"
-export FEATURES_BASE_URL="${FEATURES_BASE_URL:-http://localhost:23450}"
+export FEATURES_BASE_URL="${FEATURES_BASE_URL:-your-base-url-here}"
 
 # Change to BFCL directory
 cd ${BFCL_PROJECT_ROOT}
