@@ -12,8 +12,8 @@
   <sup>2</sup>Alibaba &nbsp;|&nbsp;
   <sup>3</sup>Nanyang Technological University, Singapore
 
-  [![Paper](https://img.shields.io/badge/PDF-Paper-red)](#)
-  [![Code](https://img.shields.io/badge/GitHub-Repository-green)](https://github.com/Coldmist-Lu/DiffuAgent)
+  [![Paper](https://img.shields.io/badge/PDF-Paper-red)](https://arxiv.org/pdf/2601.12979)
+  [![Code](https://img.shields.io/badge/GitHub-Pages-blue)](https://coldmist-lu.github.io/DiffuAgent/)
 
 </div>
 
