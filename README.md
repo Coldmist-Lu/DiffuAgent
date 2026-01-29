@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="assets/images/diffuagent_icon.png" alt="DiffuAgent Icon" width="150">
+  
 
-  # DiffuAgent
+  # <img src="assets/images/diffuagent_icon.png" alt="DiffuAgent Icon" width="30"> DiffuAgent
 
   ### The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check
 
