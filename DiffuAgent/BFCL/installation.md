@@ -43,7 +43,7 @@ DiffuAgent provides custom BFCL enhancements including 52 model configurations a
 
 ```bash
 # Go back to gorilla directory (current directory should be unified_envs/gorilla/)
-cd /path/to/unified_envs/gorilla
+pwd  # Should be /path/to/DiffuAgent/unified_envs/gorilla
 
 # Simple one-command merge: copy all DiffuAgent BFCL code
 cp -r ../../DiffuAgent/BFCL/* ./berkeley-function-call-leaderboard/
