@@ -168,7 +168,7 @@ class REQUEST_DLLM:
         completion_tokens = api_response_object.token
 
         # if self.model_name == "WeDLM":
-        #     time.sleep(1) # 防止 WeDLM 炸掉
+        #     time.sleep(1)  # prevent WeDLM from crashing
 
         return SimpleNamespace(
             object=api_response_object,

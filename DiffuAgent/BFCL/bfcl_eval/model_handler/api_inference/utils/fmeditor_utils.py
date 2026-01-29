@@ -142,16 +142,16 @@ Now generate a NEW valid tool-call that best fulfills the user requirement, stri
 
             token_len = self.llm.num_tokens_from_messages(editor_message, quiet=True)
 
-            # ✅ 新增停止条件：只剩一行（或空）
+            # New stop condition: only one line left (or empty)
             if agent_response.count("\n") == 0:
-                if len(agent_response) > 10000: # 只保留前 10000 个字符
+                if len(agent_response) > 10000:  # Only keep the first 10000 characters
                     agent_response = agent_response[:10000]
                 break
 
             if token_len > self.llm.context_length:
                 agent_response = "\n".join(agent_response.splitlines()[:-1])
             else:
-                break  # 一旦合法就停
+                break  # Stop once valid
 
         response = self.llm.chat_completion(editor_message, max_tokens=64, quiet=True)
 

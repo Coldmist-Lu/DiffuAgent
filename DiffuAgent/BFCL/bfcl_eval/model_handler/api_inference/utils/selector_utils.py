@@ -80,7 +80,7 @@ Rules:
                 print(f"context is cut!! original_length: {token_len}")
                 history_omit_num += 1
             else:
-                break  # ✅ 核心：一旦合法就停
+                break  # Core: stop once valid
         try:
             response = self.llm.chat_completion(selector_message, max_tokens=64, quiet=True)
             selected_funcs = self._post_process(response.text, functions)
@@ -118,7 +118,7 @@ Rules:
 
     def _extract_history_str(self, message, omit: int = 0):
         history_str = ""
-        skipped_tool_results = 0  # 已忽略的 tool execution result 数量
+        skipped_tool_results = 0  # Number of ignored tool execution results
 
         for m in message:
             content = m["content"] if len(m["content"]) < 512 else m["content"][:512] # cut content length
@@ -127,7 +127,7 @@ Rules:
             if m["role"] == "user" and "[Tool Execution Result]" in content:
                 if skipped_tool_results < omit:
                     skipped_tool_results += 1
-                    continue  # 忽略前 omit 个 tool result
+                    continue  # Ignore the first omit tool results
 
                 history_str += (
                     content
@@ -142,7 +142,7 @@ Rules:
 
             # ---- Assistant tool call ----
             elif m["role"] == "assistant":
-                history_str += "[Tool Call]\n" + content.split("\n")[0] + "\n" # 只取第一行，防止 主 Agent 过长导致炸显存
+                history_str += "[Tool Call]\n" + content.split("\n")[0] + "\n"  # Only take the first line, prevent main Agent from being too long and causing OOM
 
         return history_str
 

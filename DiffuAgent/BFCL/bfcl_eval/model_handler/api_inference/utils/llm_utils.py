@@ -97,15 +97,17 @@ def normalize_tools_schema(tools: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 def calculate_leftover_tokens(max_context_length: int, input_token_count: int) -> int:
     """
-    根据已有输入 token 数量和最大上下文长度，计算还能请求的 token 数量。
-    默认最多请求 4096 个 token，如果输入已经超过上下文长度，返回 1000。
+    Calculate the number of tokens that can still be requested based on the number of
+    existing input tokens and the maximum context length.
+    By default, request up to 4096 tokens. If the input already exceeds the context
+    length, return 1000.
 
-    参数:
-        max_context_length: 模型最大上下文长度
-        input_token_count: 当前输入 token 数量
+    Args:
+        max_context_length: Maximum context length of the model
+        input_token_count: Current input token count
 
-    返回:
-        leftover_tokens_count: 可请求的 token 数量
+    Returns:
+        leftover_tokens_count: Number of tokens that can be requested
     """
     if max_context_length < input_token_count + 2:
         leftover_tokens_count = 1000
@@ -166,16 +168,16 @@ def resolve_model_and_context_length(
     max_context_length = default_context_length
 
     try:
-        # tokenizer 是最优先信号
+        # tokenizer is the highest priority signal
         tokenizer = AutoTokenizer.from_pretrained(**load_kwargs)
         if getattr(tokenizer, "model_max_length", None):
             if tokenizer.model_max_length < 10**8:
                 max_context_length = tokenizer.model_max_length
     except Exception:
-        pass  # 允许失败，继续
+        pass  # Allow failure, continue
 
     try:
-        # config 是第二优先信号
+        # config is the second priority signal
         config = AutoConfig.from_pretrained(**load_kwargs)
 
         for attr in (
@@ -190,7 +192,7 @@ def resolve_model_and_context_length(
                     max_context_length = value
                     break
     except Exception:
-        pass  # 允许失败，继续
+        pass  # Allow failure, continue
 
     return model_path_or_id, tokenizer, max_context_length
 

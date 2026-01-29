@@ -421,7 +421,7 @@ class TaskLogger:
         plt.plot(range(self.max_num_steps), reward_wrt_steps, color='blue', marker='o', linestyle='solid', linewidth=1, markersize=2)
         # plt.xlabel("step")
         # plt.ylabel("reward")
-        ax = plt.gca()#获取边框
+        ax = plt.gca()  # get current axes
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         plt.ylim(0, 1)
