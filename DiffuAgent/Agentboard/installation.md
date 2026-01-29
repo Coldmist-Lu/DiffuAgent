@@ -1,6 +1,6 @@
 # Installation Guide
 
-This guide provides step-by-step instructions for setting up the DiffuAgent unified environment with enhanced AgentBoard components.
+This guide provides step-by-step instructions for setting up the DiffuAgent Agentboard components.
 
 ## Prerequisites
 
@@ -11,18 +11,18 @@ This guide provides step-by-step instructions for setting up the DiffuAgent unif
 ## Step 1: Clone this repository
 
 ```bash
-git clone git@github.com:Coldmist-Lu/DiffuAgent_TMP.git
-cd DiffuAgent_TMP
+git clone https://github.com/Coldmist-Lu/DiffuAgent.git
+cd DiffuAgent
 ```
 
-## Step 2: Create unified_envs working directory
+## Step 2: Create working directory
 
 ```bash
-mkdir unified_envs
-cd unified_envs
+mkdir -p workspace
+cd workspace
 ```
 
-## Step 3: Sparse checkout AgentBoard (agentboard folder only)
+## Step 3: Sparse checkout AgentBoard
 
 Using modern sparse checkout method to download only the `agentboard` folder from the original AgentBoard repository:
 
@@ -42,8 +42,8 @@ This downloads only the `agentboard` folder (~36MB) instead of the full reposito
 Download and extract the data files needed for AgentBoard:
 
 ```bash
-# Go back to AgentBoard directory
-cd /path/to/DiffuAgent_TMP/unified_envs/AgentBoard
+# Go back to workspace directory
+cd ../AgentBoard
 
 # Download data from HuggingFace
 wget https://huggingface.co/datasets/hkust-nlp/agentboard/resolve/main/data.tar.gz
@@ -57,14 +57,14 @@ rm data.tar.gz
 
 ## Step 5: Merge with DiffuAgent enhanced code
 
-Now you have the base AgentBoard code in `unified_envs/AgentBoard/agentboard/`. Merge it with the enhanced code from `DiffuAgent/Agentboard/`:
+Now you have the base AgentBoard code in `workspace/AgentBoard/agentboard/`. Merge it with the enhanced code from `DiffuAgent/Agentboard/`:
 
 ```bash
 # Set PROJECT_PATH (adjust as needed)
-export PROJECT_PATH=/workspace/DiffuAgent_TMP/unified_envs/AgentBoard
+export PROJECT_PATH=${PWD}
 
 # Simple one-command merge: copy all enhanced code over base code
-# Note: current directory should be unified_envs/AgentBoard/
+# Note: current directory should be workspace/AgentBoard/
 cp -r ../../DiffuAgent/Agentboard/* ./agentboard/
 ```
 
@@ -76,7 +76,7 @@ This merges enhanced agents, LLMs, tasks, prompts, configs, and scripts with the
 
 Edit `agentboard/environment/alfworld/base_config.yaml` and convert relative paths to absolute paths by prepending the full path to your AgentBoard directory.
 
-**Example**: Change `./data/alfworld/` → `/full/path/to/agentboard/data/alfworld/`
+**Example**: Change `./data/alfworld/` → `${PROJECT_PATH}/agentboard/data/alfworld/`
 
 ## Running Experiments
 
@@ -96,19 +96,6 @@ python eval_modular.py \
     --max_num_steps 30 \
     --log_path ${PROJECT_PATH}/outputs/qwen3_onepass
 ```
-
-## Troubleshooting
-
-### ImportError: cannot import name 'load_agent'
-This indicates the enhanced code wasn't properly merged. Re-run Step 5.
-
-### FileNotFoundError: No such file or directory
-Check that:
-1. Data was downloaded and extracted correctly (Step 4)
-2. Configuration paths are absolute, not relative (Step 6)
-
-### PDDL domain file not found
-If using PDDL environments, edit `agentboard/environment/pddl_env/base_config.yaml` and update relative paths to absolute paths.
 
 ## Next Steps
 
