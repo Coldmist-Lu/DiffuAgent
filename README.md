@@ -21,7 +21,9 @@
 
 ## Failure Cases of dLLMs in Agentic Workflows
 
-<img src="assets/images/dllm_failure_mode.png" alt="DLLM Failure Modes" width="100%">
+<p align="center">
+  <img src="assets/images/dllm_failure_mode.png" alt="DLLM Failure Modes" width="80%">
+</p>
 
 - **In Embodied settings**, dLLMs suffer repeated attempts (**retry loops**), failing to branch under temporal feedback.
 - **In Tool-Calling settings**, dLLMs fail to maintain **symbolic precision** (e.g., strict JSON schemas) under diffusion noise.
@@ -42,7 +44,9 @@
 
 ## Failure of dLLMs as Agent Backbones
 
-<img src="assets/images/failure_tables.png" alt="Failure Tables" width="80%">
+<p align="center">
+  <img src="assets/images/failure_tables.png" alt="Failure Tables" width="80%">
+</p>
 
 We compare dLLMs and autoregressive LLMs on embodied (AgentBoard) and tool-calling (BFCL) benchmarks.
 The results show that dLLMs lag behind on both success/progress and tool-calling accuracy.
@@ -51,7 +55,9 @@ The results show that dLLMs lag behind on both success/progress and tool-calling
 
 ## Systematic Failure Modes of dLLMs
 
-<img src="assets/images/failure_figs.png" alt="Failure Analysis" width="100%">
+<p align="center">
+  <img src="assets/images/failure_figs.png" alt="Failure Analysis" width="100%">
+</p>
 
 **(a) Failure of Replan for embodied agents**: dLLMs exhibit significantly more frequent retry loops than LLMs.
 
@@ -63,7 +69,9 @@ The results show that dLLMs lag behind on both success/progress and tool-calling
 
 ## DiffuAgent: Framework on Analyzing Agentic Behaviors in dLLMs
 
-<img src="assets/images/diffuagent.png" alt="DiffuAgent Framework" width="100%">
+<p align="center">
+  <img src="assets/images/diffuagent.png" alt="DiffuAgent Framework" width="100%">
+</p>
 
 To better understand the agentic potential of dLLMs, we introduce DiffuAgent, a novel evaluation framework that treats dLLMs as plug-and-play cognitive modules for augmenting LLM agents.
 
@@ -79,19 +87,25 @@ To better understand the agentic potential of dLLMs, we introduce DiffuAgent, a 
 
 ### Memory Augmentation
 
-<img src="assets/images/analysis_memory.png" alt="Memory Analysis" width="70%">
+<p align="center">
+  <img src="assets/images/analysis_memory.png" alt="Memory Analysis" width="70%">
+</p>
 
 **dLLMs are competitive memory modules** for memory-augmented agents.
 
 ### Early Exit Verification
 
-<img src="assets/images/analysis_earlyexit.png" alt="Early Exit Analysis" width="40%">
+<p align="center">
+  <img src="assets/images/analysis_earlyexit.png" alt="Early Exit Analysis" width="40%">
+</p>
 
 LLM Verifiers tend to trigger premature early exits, whereas **dLLMs terminate more reliably**.
 
 ### Tool-Calling Analysis
 
-<img src="assets/images/analysis_tool.png" alt="Tool Calling Analysis" width="80%">
+<p align="center">
+  <img src="assets/images/analysis_tool.png" alt="Tool Calling Analysis" width="80%">
+</p>
 
 dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
 
