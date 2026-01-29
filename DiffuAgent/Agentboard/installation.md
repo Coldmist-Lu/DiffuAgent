@@ -18,8 +18,8 @@ cd DiffuAgent
 ## Step 2: Create unified_envs working directory
 
 ```bash
-mkdir -p /path/to/unified_envs
-cd /path/to/unified_envs
+mkdir -p unified_envs
+cd unified_envs
 ```
 
 ## Step 3: Sparse checkout AgentBoard
@@ -54,15 +54,15 @@ rm data.tar.gz
 
 ## Step 5: Merge with DiffuAgent enhanced code
 
-Now you have the base AgentBoard code in `/path/to/unified_envs/AgentBoard/agentboard/`. Merge it with the enhanced code from `DiffuAgent/Agentboard/`:
+Now you have the base AgentBoard code in `unified_envs/AgentBoard/agentboard/`. Merge it with the enhanced code from `DiffuAgent/Agentboard/`:
 
 ```bash
 # Set PROJECT_PATH
-export PROJECT_PATH=/path/to/unified_envs/AgentBoard
+export PROJECT_PATH=$(pwd)/AgentBoard
 
 # Simple one-command merge: copy all enhanced code over base code
-# Note: current directory should be /path/to/unified_envs/AgentBoard/
-cp -r /path/to/DiffuAgent/Agentboard/* ./agentboard/
+# Note: current directory should be unified_envs/AgentBoard/
+cp -r ../../DiffuAgent/Agentboard/* ./agentboard/
 ```
 
 This merges enhanced agents, LLMs, tasks, prompts, configs, and scripts with the base AgentBoard code.
@@ -73,7 +73,7 @@ This merges enhanced agents, LLMs, tasks, prompts, configs, and scripts with the
 
 Edit `agentboard/environment/alfworld/base_config.yaml` and convert relative paths to absolute paths by prepending the full path to your AgentBoard directory.
 
-**Example**: Change `./data/alfworld/` → `/path/to/unified_envs/AgentBoard/agentboard/data/alfworld/`
+**Example**: Change `./data/alfworld/` → `${PROJECT_PATH}/agentboard/data/alfworld/`
 
 ## Running Experiments
 
