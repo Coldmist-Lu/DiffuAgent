@@ -158,7 +158,7 @@ dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
 ```bibtex
 @article{lu2026diffuagent,
   title   = {The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check},
-  author  = {Lu, Qingyu and Ding, Liang and Liu, Xuebo and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
+  author  = {Lu, Qingyu and Ding, Liang and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
   journal = {arXiv preprint},
   year    = {2026}
 }
