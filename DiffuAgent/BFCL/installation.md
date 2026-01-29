@@ -187,41 +187,41 @@ If the script doesn't work, you can manually register:
 
 ## Running BFCL Evaluations
 
-After setup, you can run BFCL evaluations directly from the berkeley-function-call-leaderboard directory:
+After setup, use the provided test script to run DiffuAgent evaluations:
 
-### For API-based Models (OpenAI, Anthropic, etc.)
+### Quick Test
 
 ```bash
-cd /path/to/unified_envs/gorilla/berkeley-function-call-leaderboard
+# From the DiffuAgent repository
+cd /path/to/DiffuAgent/DiffuAgent/BFCL
 
-# Example: Generate responses for OpenAI GPT-4
-python openfunctions_evaluation.py \
-  --model gpt-4 \
-  --model_type openai
+# Run the test script (uses test_case_ids_to_generate.json)
+bash tests/test_run_ids.sh
 ```
 
-### For Locally-hosted Open-source Models
+The test script will:
+1. Generate responses for test cases specified in `test_case_ids_to_generate.json`
+2. Save results to the BFCL results directory
 
-```bash
-cd /path/to/unified_envs/gorilla/berkeley-function-call-leaderboard
+### Customizing the Test
 
-# Example: Evaluate a local model with OpenAI-compatible API
-python openfunctions_evaluation.py \
-  --model your-model \
-  --model_type oss \
-  --base_url http://localhost:8000/v1
-```
+Edit `tests/test_run_ids.sh` to configure:
 
-### Selecting Test Categories
+- **BFCL_PROJECT_ROOT**: Path to berkeley-function-call-leaderboard
+- **MODEL_PATH**: Path to your model
+- **MODEL_NAME**: Model identifier for BFCL
+- **API keys and URLs**: Main agent and features backend endpoints
 
-```bash
-cd /path/to/unified_envs/gorilla/berkeley-function-call-leaderboard
+### Test Case Selection
 
-# Run specific test categories only
-python openfunctions_evaluation.py \
-  --model gpt-4 \
-  --model_type openai \
-  --categories ast,simple,multiple
+Edit `test_case_ids_to_generate.json` to select which test cases to run:
+
+```json
+{
+  "simple_java": ["1-5", "10-15"],
+  "simple_javascript": ["1-3"],
+  "simple_python": ["1-10"]
+}
 ```
 
 ## BFCL Test Categories
