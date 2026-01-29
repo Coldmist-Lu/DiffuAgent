@@ -19,9 +19,10 @@ logger.setLevel(logging.INFO)
 
 
 # DiffusionLLM server configuration
+# Set via environment variables: DLLM_API_KEY, DLLM_BASE_URL or FEATURES_API_KEY, FEATURES_BASE_URL
 DLLM_CONFIG = {
-    "API_KEY": os.getenv("DLLM_API_KEY", "your-api-key-here"),
-    "BASE_URL": os.getenv("DLLM_BASE_URL", "http://localhost:23450/"),
+    "API_KEY": os.getenv("DLLM_API_KEY") or os.getenv("FEATURES_API_KEY") or "",
+    "BASE_URL": os.getenv("DLLM_BASE_URL") or os.getenv("FEATURES_BASE_URL") or "",
 }
 
 

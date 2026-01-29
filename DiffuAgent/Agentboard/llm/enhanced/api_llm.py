@@ -21,18 +21,19 @@ logger.setLevel(logging.INFO)
 
 # Port configuration for API servers
 # Automatically detects the first available server
+# Set via environment variables: MAIN_AGENT_API_KEY, MAIN_AGENT_BASE_URL (or legacy VLLM_*)
 PORTS_CONFIG = {
     "0": {
-        "API_KEY": os.getenv("VLLM_API_KEY", "your-api-key-here"),
-        "BASE_URL": os.getenv("VLLM_BASE_URL", "http://localhost:23456/"),
+        "API_KEY": os.getenv("MAIN_AGENT_API_KEY") or os.getenv("VLLM_API_KEY") or "",
+        "BASE_URL": os.getenv("MAIN_AGENT_BASE_URL") or os.getenv("VLLM_BASE_URL") or "",
     },
     "1": {
-        "API_KEY": os.getenv("VLLM_API_KEY", "your-api-key-here"),
-        "BASE_URL": os.getenv("VLLM_BASE_URL_1", "http://localhost:23460/"),
+        "API_KEY": os.getenv("MAIN_AGENT_API_KEY") or os.getenv("VLLM_API_KEY") or "",
+        "BASE_URL": os.getenv("MAIN_AGENT_BASE_URL_1") or os.getenv("VLLM_BASE_URL_1") or "",
     },
     "2": {
-        "API_KEY": os.getenv("VLLM_API_KEY", "your-api-key-here"),
-        "BASE_URL": os.getenv("VLLM_BASE_URL_2", "http://localhost:23465/"),
+        "API_KEY": os.getenv("MAIN_AGENT_API_KEY") or os.getenv("VLLM_API_KEY") or "",
+        "BASE_URL": os.getenv("MAIN_AGENT_BASE_URL_2") or os.getenv("VLLM_BASE_URL_2") or "",
     },
 }
 
