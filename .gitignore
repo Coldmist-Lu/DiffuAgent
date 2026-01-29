@@ -37,3 +37,6 @@ score/
 *.backup
 *.bak
 *.tmp
+
+# Local working directory for unified environment
+unified_envs/
