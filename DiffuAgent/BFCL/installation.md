@@ -270,9 +270,3 @@ Both projects use the same sparse checkout strategy for minimal footprint in the
 - **Test Categories**: See `TEST_CATEGORIES.md`
 - **Contributing**: See `CONTRIBUTING.md`
 - **Logging Guide**: See `LOG_GUIDE.md`
-
-## Next Steps
-
-- See `README.md` in `DiffuAgent/BFCL/` for DiffuAgent-specific BFCL integration
-- See `SUPPORTED_MODELS.md` for the list of supported models
-- See `tests/` directory in `DiffuAgent/BFCL/` for custom test cases
