@@ -17,6 +17,16 @@
 
 </div>
 
+## TL;DR
+
+- **Efficiency ≠ Agentic Effectiveness.** Despite low latency, diffusion-based LLMs (**dLLMs**) fail to serve as reliable agent backbones in both long-horizon **embodied** tasks and precision-critical **tool-calling** scenarios.
+
+- **Systematic Agentic Failures.** dLLMs exhibit characteristic failure modes, including retry loops under temporal feedback and loss of symbolic precision (e.g., malformed JSON) under diffusion noise.
+
+- **DiffuAgent Framework.** We introduce **DiffuAgent**, a unified and modular framework for evaluating dLLMs across embodied and tool-calling agentic workflows.
+
+- **Where dLLMs Work.** dLLMs remain effective in non-causal auxiliary roles (e.g., memory summarization and tool selection), but require causal and logically grounded mechanisms to function as full agent backbones.
+
 ## Failure Cases of dLLMs in Agentic Workflows
 
 <p align="center">
@@ -25,16 +35,6 @@
 
 - **In Embodied settings**, dLLMs suffer repeated attempts (**retry loops**), failing to branch under temporal feedback.
 - **In Tool-Calling settings**, dLLMs fail to maintain **symbolic precision** (e.g., strict JSON schemas) under diffusion noise.
-
-## TL;DR
-
-- **Efficiency ≠ Agentic Effectiveness.** Despite low latency, diffusion-based LLMs (dLLMs) fail to serve as reliable agent backbones in both long-horizon **embodied** tasks and precision-critical **tool-calling** scenarios.
-
-- **Systematic Agentic Failures.** dLLMs exhibit characteristic failure modes, including retry loops under temporal feedback and loss of symbolic precision (e.g., malformed JSON) under diffusion noise.
-
-- **DiffuAgent Framework.** We introduce **DiffuAgent**, a unified and modular framework for evaluating dLLMs across embodied and tool-calling agentic workflows.
-
-- **Where dLLMs Work.** dLLMs remain effective in non-causal auxiliary roles (e.g., memory summarization and tool selection), but require causal and logically grounded mechanisms to function as full agent backbones.
 
 ## Failure of dLLMs as Agent Backbones
 
