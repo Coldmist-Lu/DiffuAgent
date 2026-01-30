@@ -17,8 +17,6 @@
 
 </div>
 
----
-
 ## Failure Cases of dLLMs in Agentic Workflows
 
 <p align="center">
@@ -122,8 +120,6 @@ dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
   url     = {https://arxiv.org/pdf/2601.12979}
 }
 ```
-
----
 
 <div align="center">
 
