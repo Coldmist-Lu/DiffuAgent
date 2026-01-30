@@ -87,16 +87,7 @@ For detailed installation and setup instructions:
 - **AgentBoard**: [`installation.md`](DiffuAgent/Agentboard/installation.md) | [`Original Repo`](https://github.com/hkust-nlp/AgentBoard)
 - **BFCL**: [`installation.md`](DiffuAgent/BFCL/installation.md) | [`Original Repo`](https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/)
 
-**Setup**:
-```bash
-git clone git@github.com:Coldmist-Lu/DiffuAgent.git
-cd DiffuAgent
-# Follow installation.md for complete setup guide
-```
-
-**Environment Requirements**: Please refer to the original repositories for detailed environment requirements:
-- [AgentBoard](https://github.com/hkust-nlp/AgentBoard)
-- [BFCL](https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/)
+> **Note:** Please refer to the original repositories for detailed environment requirements.
 
 > **Note:** Our BFCL experiments have been extended to v4. To reproduce v3 experiments, please use the v3 codebase.
 
