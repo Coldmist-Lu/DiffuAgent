@@ -123,6 +123,8 @@ dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
 }
 ```
 
+---
+
 <div align="center">
 
   © 2026 DiffuAgent
