@@ -28,8 +28,6 @@
 - **In Embodied settings**, dLLMs suffer repeated attempts (**retry loops**), failing to branch under temporal feedback.
 - **In Tool-Calling settings**, dLLMs fail to maintain **symbolic precision** (e.g., strict JSON schemas) under diffusion noise.
 
----
-
 ## TL;DR
 
 - **Efficiency ≠ Agentic Effectiveness.** Despite low latency, diffusion-based LLMs (dLLMs) fail to serve as reliable agent backbones in both long-horizon **embodied** tasks and precision-critical **tool-calling** scenarios.
@@ -40,8 +38,6 @@
 
 - **Where dLLMs Work.** dLLMs remain effective in non-causal auxiliary roles (e.g., memory summarization and tool selection), but require causal and logically grounded mechanisms to function as full agent backbones.
 
----
-
 ## Failure of dLLMs as Agent Backbones
 
 <p align="center">
@@ -50,8 +46,6 @@
 
 We compare dLLMs and autoregressive LLMs on embodied (AgentBoard) and tool-calling (BFCL) benchmarks.
 The results show that dLLMs lag behind on both success/progress and tool-calling accuracy.
-
----
 
 ## Systematic Failure Modes of dLLMs
 
@@ -64,8 +58,6 @@ The results show that dLLMs lag behind on both success/progress and tool-calling
 **(b) Failure of Precision for tool-calling agents**: dLLMs are more prone to produce malformed JSON schemas.
 
 **(c) Performance-Efficiency Trade-offs**: despite higher inference efficiency, dLLMs do not guarantee comparable agentic performance to autoregressive LLMs.
-
----
 
 ## DiffuAgent: Framework on Analyzing Agentic Behaviors in dLLMs
 
@@ -93,8 +85,6 @@ For detailed installation and setup instructions:
 
 > **Note:** We used Claude Code for automatic code optimization, which passed preliminary testing. If you encounter any issues during use, please contact us.
 
----
-
 ## Analysis of Agentic Behaviors in dLLMs
 
 ### Memory Augmentation
@@ -121,8 +111,6 @@ LLM Verifiers tend to trigger premature early exits, whereas **dLLMs terminate m
 
 dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
 
----
-
 ## Citation
 
 ```bibtex
@@ -134,8 +122,6 @@ dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
   url     = {https://arxiv.org/pdf/2601.12979}
 }
 ```
-
----
 
 <div align="center">
 
