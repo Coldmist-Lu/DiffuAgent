@@ -130,7 +130,8 @@ dLLMs are **effective tool selectors** but **struggle as tool-call editors**.
   title   = {The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check},
   author  = {Lu, Qingyu and Ding, Liang and Zhang, Kanjian and Zhang, Jinxia and Tao, Dacheng},
   journal = {arXiv preprint},
-  year    = {2026}
+  year    = {2026},
+  url     = {https://arxiv.org/pdf/2601.12979}
 }
 ```
 
