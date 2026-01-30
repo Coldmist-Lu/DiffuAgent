@@ -84,8 +84,8 @@ To better understand the agentic potential of dLLMs, we introduce DiffuAgent, a 
 ### Quick Start
 
 For detailed installation and setup instructions:
-- **AgentBoard**: [`Agentboard/installation.md`](Agentboard/installation.md) | [Original Repository](https://github.com/hkust-nlp/AgentBoard)
-- **BFCL**: [`BFCL/README.md`](BFCL/README.md) | [Original Repository](https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/)
+- **AgentBoard**: [`installation.md`](DiffuAgent/Agentboard/installation.md) | [`Original Repo`](https://github.com/hkust-nlp/AgentBoard)
+- **BFCL**: [`installation.md`](DiffuAgent/BFCL/installation.md) | [`Original Repo`](https://github.com/ShishirPatil/gorilla/blob/main/berkeley-function-call-leaderboard/)
 
 **Setup**:
 ```bash
